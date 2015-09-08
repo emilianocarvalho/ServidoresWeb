@@ -1,0 +1,8 @@
+
+public @interface WebServlet {
+
+	String[] urlPatterns();
+
+	String description();
+
+}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Student Data</title>
+</head>
+<body>
+	<form method="get" action="AddStudent">
+		Nome do Estudante <input type="text" name="nome"> <br>
+		Faculdade <input type="text" name="faculdade"> <br> <input
+			type="submit" value="Listar"> <br>
+	</form>
+</body>
+</html>
