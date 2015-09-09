@@ -1,0 +1,12 @@
+package br.com.estacio.client;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+
+public class Main {
+
+	public static void main(String[] args) {
+		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+		
+	}
+
+}

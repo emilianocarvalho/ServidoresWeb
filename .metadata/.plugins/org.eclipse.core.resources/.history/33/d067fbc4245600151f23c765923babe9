@@ -1,0 +1,32 @@
+package br.com.estacio.client;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+		DocumentBuilder db = dbf.newDocumentBuilder();
+		
+		Document doc = db.parse("pessoas.xml");
+		
+		Element raiz = doc.getDocumentElement();
+		
+		System.out.println("Elemento raiz: " + raiz.getNodeName());
+		
+		NodeList listaPessoas = raiz.getElementsByTagName("pessoa");
+		
+		System.out.println("Quantidade de Pessoas: " + listaPessoas.getLength());
+		
+		for (int i = 0; i < listaPessoas.getLength(); i++) {
+			Element tagPessoa = (Element) listaPessoas.item(i);
+			
+		}
+	}
+
+}

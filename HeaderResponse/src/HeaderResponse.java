@@ -57,23 +57,49 @@ public class HeaderResponse extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		String chave;
+		String valor;
+
 		response.setContentType("text/html;charset=UTF-8");
 
 		Enumeration<String> header = request.getHeaderNames();
 
 		PrintWriter out = response.getWriter();
+		out.println("<head>");
+		out.println("<style>");
+		out.println("table, th, td {");
+		out.println("border: 1px solid black;");
+		out.println("border-collapse: collapse;");
+		out.println("}");
+		out.println("th, td {");
+		out.println("padding: 5px;");
+		out.println("}");
+		out.println("th {");
+		out.println("text-align: left;");
+		out.println("}");
+		out.println("</style></head>");
+		out.println("<body>");
 		out.println("<h2>Informações contidas no Header</h2>");
-
+		out.println("<table>");
+		out.println("<tr>");
+		out.println("<th>Chave</th>");
+		out.println("<th>Valor</th>"); 
+		out.println("</tr>");
 		while (header.hasMoreElements()) {
-			out.println(header.nextElement());
-
+			chave = (String) header.nextElement();
+			valor = request.getHeader(chave);
+			out.println("<tr>");			
+			out.println("<td>" + chave + "</td><td>" + valor + "</td>");
+			out.println("</tr>");
 		}
+		out.println("<table>");
 		out.println("<p><b>User-agent:</b></p>");
 		out.println(request.getHeader("user-agent"));
 
 		/*
 		 * recuperando parâmetros por meio de um objeto da classe ServletConfig
 		 */
+
 		out.println("<h2>Parâmetro - objeto da classe ServletConfig</h2>");
 
 		ServletConfig config = getServletConfig();
@@ -83,15 +109,16 @@ public class HeaderResponse extends HttpServlet {
 
 		String parametro2 = config.getInitParameter("param2");
 		out.println("<br>Valor do parâmetro 1: " + parametro2);
-		
+
 		/*
 		 * ou usando direto na saída
 		 */
 		out.println("<h2>Parâmetro - usando direto na saída</h2>");
 
 		out.println("Valor do parâmetro 1: " + getServletConfig().getInitParameter("param1"));
-
+		out.println("</body>");
 		out.close();		
+		
 
 	}
 

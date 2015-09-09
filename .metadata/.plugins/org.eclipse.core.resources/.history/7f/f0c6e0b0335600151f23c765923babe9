@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Retornar Tabuada</title>
+</head>
+<body>
+	<form method="get" action="RetTabuada.do">
+		Informe um número [1-9] <input type="text" name="num"> <br>
+		<input type="submit" value="Calcular"> <br>
+	</form>
+</body>
+</html>

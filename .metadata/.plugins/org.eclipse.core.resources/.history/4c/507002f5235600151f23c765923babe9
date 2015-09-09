@@ -1,0 +1,17 @@
+package br.com.estacio.client;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+public class Main {
+
+	public static void main(String[] args) {
+		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+		DocumentBuilder db = dbf.newDocumentBuilder();
+		
+		Document 
+		
+		Element raiz = doc.ge
+	}
+
+}
