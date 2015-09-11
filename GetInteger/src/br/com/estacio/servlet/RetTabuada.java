@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class RetTabuada
@@ -33,6 +34,19 @@ public class RetTabuada extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		Enumeration<String> e = request.getParameterNames();
 
+		/*
+		 * Armazenado na sessao
+		 */
+		HttpSession sessao = request.getSession();
+		
+		Integer qtdSessao = (Integer) sessao.getAttribute("qtdSessao");
+		
+		if (qtdSessao == null) {
+			sessao.setAttribute("qtdSessao", 0);
+		} else {
+			sessao.setAttribute("qtdSessao", ++qtdSessao);
+		}
+
 		out.println("<head>");
 		out.println("<title>Multiplicação de um número informado</title>");
 		out.println("</head>");
@@ -40,6 +54,9 @@ public class RetTabuada extends HttpServlet {
 
 		out.println("<h1>Multiplicação de um número informado</h1>");
 		out.println("<table>");
+		out.println("<tr>");
+		out.println("<td>Valor</td>");
+		out.println("<td>Sessão : " + qtdSessao + "</td>");
 		while(e.hasMoreElements())
 		{
 			Object obj = e.nextElement();

@@ -37,6 +37,7 @@ public class Listar extends HttpServlet {
 		Enumeration<String> header = request.getHeaderNames();
 
 		PrintWriter out = response.getWriter();
+		
 		out.println("<head>");
 		out.println("<style>");
 		out.println("table, th, td {border: 1px solid black; border-collapse: collapse;}");
@@ -54,12 +55,17 @@ public class Listar extends HttpServlet {
 				out.println("<th>Chave</th>");
 				out.println("<th>Valor</th>"); 
 			out.println("</tr>");
+			
 			while (header.hasMoreElements()) {
+				
 				chave = (String) header.nextElement();
 				valor = request.getHeader(chave);
+
 				out.println("<tr>");			
-				out.println("<td>" + chave + "</td><td>" + valor + "</td>");
+					out.println("<td>" + chave + "</td>");
+					out.println("<td>" + valor + "</td>");
 				out.println("</tr>");
+				
 			}
 		out.println("<table>");
 		out.close();
