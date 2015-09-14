@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="CalcularIMC">
+        <property name="context-root" value="CalcularIMC"/>
+    </wb-module>
+</project-modules>

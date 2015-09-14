@@ -1,0 +1,9 @@
+package br.com.estacio.servlet;
+
+public class Pessoa {
+	private String nome;
+	private Float peso;
+	private Float altura;
+	
+	private Float IMC;
+}

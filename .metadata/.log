@@ -7995,3 +7995,475 @@ Caused by: java.net.ConnectException: Connection refused
 	at sun.rmi.transport.proxy.RMIMasterSocketFactory.createSocket(RMIMasterSocketFactory.java:147)
 	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:613)
 	... 22 more
+!SESSION 2015-09-10 21:51:10.711 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.7.0_80
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2015-09-11 00:14:12.186
+!MESSAGE Error disconnecting from this server's JMX service: JBoss AS 7.0
+!STACK 0
+java.rmi.ConnectException: Connection refused to host: 127.0.0.1; nested exception is: 
+	java.net.ConnectException: Connection refused
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:619)
+	at sun.rmi.transport.tcp.TCPChannel.createConnection(TCPChannel.java:216)
+	at sun.rmi.transport.tcp.TCPChannel.newConnection(TCPChannel.java:202)
+	at sun.rmi.server.UnicastRef.invoke(UnicastRef.java:129)
+	at com.sun.jmx.remote.internal.PRef.invoke(Unknown Source)
+	at javax.management.remote.rmi.RMIConnectionImpl_Stub.close(Unknown Source)
+	at javax.management.remote.rmi.RMIConnector.close(RMIConnector.java:505)
+	at javax.management.remote.rmi.RMIConnector.close(RMIConnector.java:445)
+	at org.jboss.tools.jmx.core.providers.DefaultConnectionWrapper.disconnect(DefaultConnectionWrapper.java:90)
+	at org.jboss.ide.eclipse.as.jmx.integration.JBoss70ConnectionProvider$ExtendedDefaultConnectionWrapper.serverChanged(JBoss70ConnectionProvider.java:99)
+	at org.eclipse.wst.server.core.internal.ServerNotificationManager.broadcastChange(ServerNotificationManager.java:125)
+	at org.eclipse.wst.server.core.internal.Server.fireServerStateChangeEvent(Server.java:742)
+	at org.eclipse.wst.server.core.internal.Server.setServerState(Server.java:650)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.setServerState(ServerBehaviourDelegate.java:143)
+	at org.jboss.ide.eclipse.as.wtp.core.server.behavior.ControllableServerBehavior.setServerStopped(ControllableServerBehavior.java:213)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.ProcessTerminatedDebugListener.handleProcessTerminatedEvent(ProcessTerminatedDebugListener.java:74)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.ProcessTerminatedDebugListener.handleDebugEvents(ProcessTerminatedDebugListener.java:48)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(DebugPlugin.java:1151)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(DebugPlugin.java:1187)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:431)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at sun.rmi.transport.proxy.RMIDirectSocketFactory.createSocket(RMIDirectSocketFactory.java:40)
+	at sun.rmi.transport.proxy.RMIMasterSocketFactory.createSocket(RMIMasterSocketFactory.java:147)
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:613)
+	... 21 more
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2015-09-11 00:14:12.199
+!MESSAGE Error disconnecting from this server's JMX service: JBoss AS 7.0
+!STACK 0
+java.rmi.ConnectException: Connection refused to host: 127.0.0.1; nested exception is: 
+	java.net.ConnectException: Connection refused
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:619)
+	at sun.rmi.transport.tcp.TCPChannel.createConnection(TCPChannel.java:216)
+	at sun.rmi.transport.tcp.TCPChannel.newConnection(TCPChannel.java:202)
+	at sun.rmi.server.UnicastRef.invoke(UnicastRef.java:129)
+	at com.sun.jmx.remote.internal.PRef.invoke(Unknown Source)
+	at javax.management.remote.rmi.RMIConnectionImpl_Stub.close(Unknown Source)
+	at javax.management.remote.rmi.RMIConnector.close(RMIConnector.java:505)
+	at javax.management.remote.rmi.RMIConnector.close(RMIConnector.java:445)
+	at org.jboss.tools.jmx.core.providers.DefaultConnectionWrapper.disconnect(DefaultConnectionWrapper.java:90)
+	at org.jboss.ide.eclipse.as.jmx.integration.JBoss70ConnectionProvider$ExtendedDefaultConnectionWrapper.serverChanged(JBoss70ConnectionProvider.java:99)
+	at org.eclipse.wst.server.core.internal.ServerNotificationManager.broadcastChange(ServerNotificationManager.java:125)
+	at org.eclipse.wst.server.core.internal.Server.fireServerStateChangeEvent(Server.java:742)
+	at org.eclipse.wst.server.core.internal.Server.setMode(Server.java:838)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.setMode(ServerBehaviourDelegate.java:156)
+	at org.jboss.ide.eclipse.as.wtp.core.server.behavior.ControllableServerBehavior.setRunMode(ControllableServerBehavior.java:291)
+	at org.jboss.ide.eclipse.as.wtp.core.server.behavior.ControllableServerBehavior.setServerStopped(ControllableServerBehavior.java:215)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.ProcessTerminatedDebugListener.handleProcessTerminatedEvent(ProcessTerminatedDebugListener.java:74)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.ProcessTerminatedDebugListener.handleDebugEvents(ProcessTerminatedDebugListener.java:48)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(DebugPlugin.java:1151)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(DebugPlugin.java:1187)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:431)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at sun.rmi.transport.proxy.RMIDirectSocketFactory.createSocket(RMIDirectSocketFactory.java:40)
+	at sun.rmi.transport.proxy.RMIMasterSocketFactory.createSocket(RMIMasterSocketFactory.java:147)
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:613)
+	... 22 more
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2015-09-11 00:14:32.572
+!MESSAGE Error disconnecting from this server's JMX service: JBoss AS 7.0
+!STACK 0
+java.rmi.ConnectException: Connection refused to host: 127.0.0.1; nested exception is: 
+	java.net.ConnectException: Connection refused
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:619)
+	at sun.rmi.transport.tcp.TCPChannel.createConnection(TCPChannel.java:216)
+	at sun.rmi.transport.tcp.TCPChannel.newConnection(TCPChannel.java:202)
+	at sun.rmi.server.UnicastRef.invoke(UnicastRef.java:129)
+	at com.sun.jmx.remote.internal.PRef.invoke(Unknown Source)
+	at javax.management.remote.rmi.RMIConnectionImpl_Stub.close(Unknown Source)
+	at javax.management.remote.rmi.RMIConnector.close(RMIConnector.java:505)
+	at javax.management.remote.rmi.RMIConnector.close(RMIConnector.java:445)
+	at org.jboss.tools.jmx.core.providers.DefaultConnectionWrapper.disconnect(DefaultConnectionWrapper.java:90)
+	at org.jboss.ide.eclipse.as.jmx.integration.JBoss70ConnectionProvider$ExtendedDefaultConnectionWrapper.serverChanged(JBoss70ConnectionProvider.java:99)
+	at org.eclipse.wst.server.core.internal.ServerNotificationManager.broadcastChange(ServerNotificationManager.java:125)
+	at org.eclipse.wst.server.core.internal.Server.fireServerStateChangeEvent(Server.java:742)
+	at org.eclipse.wst.server.core.internal.Server.setMode(Server.java:838)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.setMode(ServerBehaviourDelegate.java:156)
+	at org.jboss.ide.eclipse.as.wtp.core.server.behavior.ControllableServerBehavior.setRunMode(ControllableServerBehavior.java:291)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.AbstractStartJavaServerLaunchDelegate.beforeVMRunner(AbstractStartJavaServerLaunchDelegate.java:156)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.AbstractStartJavaServerLaunchDelegate.launch(AbstractStartJavaServerLaunchDelegate.java:87)
+	at org.jboss.tools.as.core.server.controllable.subsystems.internal.LocalJBossLaunchController.launch(LocalJBossLaunchController.java:94)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.ControllableServerLaunchConfiguration.launch(ControllableServerLaunchConfiguration.java:52)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:731)
+	at org.eclipse.wst.server.core.internal.Server.startImpl2(Server.java:3541)
+	at org.eclipse.wst.server.core.internal.Server.startImpl(Server.java:3477)
+	at org.eclipse.wst.server.core.internal.Server$StartJob.run(Server.java:367)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at sun.rmi.transport.proxy.RMIDirectSocketFactory.createSocket(RMIDirectSocketFactory.java:40)
+	at sun.rmi.transport.proxy.RMIMasterSocketFactory.createSocket(RMIMasterSocketFactory.java:147)
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:613)
+	... 25 more
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2015-09-11 00:14:32.599
+!MESSAGE Error disconnecting from this server's JMX service: JBoss AS 7.0
+!STACK 0
+java.rmi.ConnectException: Connection refused to host: 127.0.0.1; nested exception is: 
+	java.net.ConnectException: Connection refused
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:619)
+	at sun.rmi.transport.tcp.TCPChannel.createConnection(TCPChannel.java:216)
+	at sun.rmi.transport.tcp.TCPChannel.newConnection(TCPChannel.java:202)
+	at sun.rmi.server.UnicastRef.invoke(UnicastRef.java:129)
+	at com.sun.jmx.remote.internal.PRef.invoke(Unknown Source)
+	at javax.management.remote.rmi.RMIConnectionImpl_Stub.close(Unknown Source)
+	at javax.management.remote.rmi.RMIConnector.close(RMIConnector.java:505)
+	at javax.management.remote.rmi.RMIConnector.close(RMIConnector.java:445)
+	at org.jboss.tools.jmx.core.providers.DefaultConnectionWrapper.disconnect(DefaultConnectionWrapper.java:90)
+	at org.jboss.ide.eclipse.as.jmx.integration.JBoss70ConnectionProvider$ExtendedDefaultConnectionWrapper.serverChanged(JBoss70ConnectionProvider.java:99)
+	at org.eclipse.wst.server.core.internal.ServerNotificationManager.broadcastChange(ServerNotificationManager.java:125)
+	at org.eclipse.wst.server.core.internal.Server.fireServerStateChangeEvent(Server.java:742)
+	at org.eclipse.wst.server.core.internal.Server.setServerState(Server.java:650)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.setServerState(ServerBehaviourDelegate.java:143)
+	at org.jboss.ide.eclipse.as.wtp.core.server.behavior.ControllableServerBehavior.setServerStarting(ControllableServerBehavior.java:195)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.AbstractStartJavaServerLaunchDelegate.beforeVMRunner(AbstractStartJavaServerLaunchDelegate.java:157)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.AbstractStartJavaServerLaunchDelegate.launch(AbstractStartJavaServerLaunchDelegate.java:87)
+	at org.jboss.tools.as.core.server.controllable.subsystems.internal.LocalJBossLaunchController.launch(LocalJBossLaunchController.java:94)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.ControllableServerLaunchConfiguration.launch(ControllableServerLaunchConfiguration.java:52)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:731)
+	at org.eclipse.wst.server.core.internal.Server.startImpl2(Server.java:3541)
+	at org.eclipse.wst.server.core.internal.Server.startImpl(Server.java:3477)
+	at org.eclipse.wst.server.core.internal.Server$StartJob.run(Server.java:367)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at sun.rmi.transport.proxy.RMIDirectSocketFactory.createSocket(RMIDirectSocketFactory.java:40)
+	at sun.rmi.transport.proxy.RMIMasterSocketFactory.createSocket(RMIMasterSocketFactory.java:147)
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:613)
+	... 25 more
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2015-09-11 00:15:31.904
+!MESSAGE Error disconnecting from this server's JMX service: JBoss AS 7.0
+!STACK 0
+java.rmi.ConnectException: Connection refused to host: 127.0.0.1; nested exception is: 
+	java.net.ConnectException: Connection refused
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:619)
+	at sun.rmi.transport.tcp.TCPChannel.createConnection(TCPChannel.java:216)
+	at sun.rmi.transport.tcp.TCPChannel.newConnection(TCPChannel.java:202)
+	at sun.rmi.server.UnicastRef.invoke(UnicastRef.java:129)
+	at com.sun.jmx.remote.internal.PRef.invoke(Unknown Source)
+	at javax.management.remote.rmi.RMIConnectionImpl_Stub.close(Unknown Source)
+	at javax.management.remote.rmi.RMIConnector.close(RMIConnector.java:505)
+	at javax.management.remote.rmi.RMIConnector.close(RMIConnector.java:445)
+	at org.jboss.tools.jmx.core.providers.DefaultConnectionWrapper.disconnect(DefaultConnectionWrapper.java:90)
+	at org.jboss.ide.eclipse.as.jmx.integration.JBoss70ConnectionProvider$ExtendedDefaultConnectionWrapper.serverChanged(JBoss70ConnectionProvider.java:99)
+	at org.eclipse.wst.server.core.internal.ServerNotificationManager.broadcastChange(ServerNotificationManager.java:125)
+	at org.eclipse.wst.server.core.internal.Server.fireServerStateChangeEvent(Server.java:742)
+	at org.eclipse.wst.server.core.internal.Server.setServerState(Server.java:650)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.setServerState(ServerBehaviourDelegate.java:143)
+	at org.jboss.ide.eclipse.as.wtp.core.server.behavior.ControllableServerBehavior.setServerStopped(ControllableServerBehavior.java:213)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.ProcessTerminatedDebugListener.handleProcessTerminatedEvent(ProcessTerminatedDebugListener.java:74)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.ProcessTerminatedDebugListener.handleDebugEvents(ProcessTerminatedDebugListener.java:48)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(DebugPlugin.java:1151)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(DebugPlugin.java:1187)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:431)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at sun.rmi.transport.proxy.RMIDirectSocketFactory.createSocket(RMIDirectSocketFactory.java:40)
+	at sun.rmi.transport.proxy.RMIMasterSocketFactory.createSocket(RMIMasterSocketFactory.java:147)
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:613)
+	... 21 more
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2015-09-11 00:15:31.908
+!MESSAGE Error disconnecting from this server's JMX service: JBoss AS 7.0
+!STACK 0
+java.rmi.ConnectException: Connection refused to host: 127.0.0.1; nested exception is: 
+	java.net.ConnectException: Connection refused
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:619)
+	at sun.rmi.transport.tcp.TCPChannel.createConnection(TCPChannel.java:216)
+	at sun.rmi.transport.tcp.TCPChannel.newConnection(TCPChannel.java:202)
+	at sun.rmi.server.UnicastRef.invoke(UnicastRef.java:129)
+	at com.sun.jmx.remote.internal.PRef.invoke(Unknown Source)
+	at javax.management.remote.rmi.RMIConnectionImpl_Stub.close(Unknown Source)
+	at javax.management.remote.rmi.RMIConnector.close(RMIConnector.java:505)
+	at javax.management.remote.rmi.RMIConnector.close(RMIConnector.java:445)
+	at org.jboss.tools.jmx.core.providers.DefaultConnectionWrapper.disconnect(DefaultConnectionWrapper.java:90)
+	at org.jboss.ide.eclipse.as.jmx.integration.JBoss70ConnectionProvider$ExtendedDefaultConnectionWrapper.serverChanged(JBoss70ConnectionProvider.java:99)
+	at org.eclipse.wst.server.core.internal.ServerNotificationManager.broadcastChange(ServerNotificationManager.java:125)
+	at org.eclipse.wst.server.core.internal.Server.fireServerStateChangeEvent(Server.java:742)
+	at org.eclipse.wst.server.core.internal.Server.setMode(Server.java:838)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.setMode(ServerBehaviourDelegate.java:156)
+	at org.jboss.ide.eclipse.as.wtp.core.server.behavior.ControllableServerBehavior.setRunMode(ControllableServerBehavior.java:291)
+	at org.jboss.ide.eclipse.as.wtp.core.server.behavior.ControllableServerBehavior.setServerStopped(ControllableServerBehavior.java:215)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.ProcessTerminatedDebugListener.handleProcessTerminatedEvent(ProcessTerminatedDebugListener.java:74)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.ProcessTerminatedDebugListener.handleDebugEvents(ProcessTerminatedDebugListener.java:48)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(DebugPlugin.java:1151)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(DebugPlugin.java:1187)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:431)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at sun.rmi.transport.proxy.RMIDirectSocketFactory.createSocket(RMIDirectSocketFactory.java:40)
+	at sun.rmi.transport.proxy.RMIMasterSocketFactory.createSocket(RMIMasterSocketFactory.java:147)
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:613)
+	... 22 more
+!SESSION 2015-09-14 08:50:37.551 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.7.0_80
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.ui 4 4 2015-09-14 08:53:54.496
+!MESSAGE Plug-in 'org.eclipse.m2e.core.ui' contributed an invalid Menu Extension (Path: 'org.eclipse.ui.projectConfigure' is invalid): org.eclipse.m2e.enableNatureAction
+
+!ENTRY org.eclipse.ui 4 4 2015-09-14 08:53:54.525
+!MESSAGE Plug-in 'org.eclipse.pde.ui' contributed an invalid Menu Extension (Path: 'org.eclipse.ui.projectConfigure' is invalid): org.eclipse.pde.ui.ConvertedProjectWizard
+
+!ENTRY org.eclipse.ui 4 4 2015-09-14 08:53:54.526
+!MESSAGE Plug-in 'org.jboss.tools.jst.web.kb' contributed an invalid Menu Extension (Path: 'org.eclipse.ui.projectConfigure' is invalid): org.jboss.tools.web.kb.AddKBSupport
+
+!ENTRY org.eclipse.ui 4 4 2015-09-14 08:53:54.526
+!MESSAGE Plug-in 'org.jboss.tools.ws.jaxrs.ui' contributed an invalid Menu Extension (Path: 'org.eclipse.ui.projectConfigure' is invalid): org.jboss.tools.ws.jaxrs.configuration.addJaxrsConfigurationAction
+!SESSION 2015-09-14 08:54:39.427 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.7.0_80
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2015-09-14 09:52:41.319
+!MESSAGE Error disconnecting from this server's JMX service: JBoss AS 7.0
+!STACK 0
+java.rmi.ConnectException: Connection refused to host: 127.0.0.1; nested exception is: 
+	java.net.ConnectException: Connection refused
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:619)
+	at sun.rmi.transport.tcp.TCPChannel.createConnection(TCPChannel.java:216)
+	at sun.rmi.transport.tcp.TCPChannel.newConnection(TCPChannel.java:202)
+	at sun.rmi.server.UnicastRef.invoke(UnicastRef.java:129)
+	at com.sun.jmx.remote.internal.PRef.invoke(Unknown Source)
+	at javax.management.remote.rmi.RMIConnectionImpl_Stub.close(Unknown Source)
+	at javax.management.remote.rmi.RMIConnector.close(RMIConnector.java:505)
+	at javax.management.remote.rmi.RMIConnector.close(RMIConnector.java:445)
+	at org.jboss.tools.jmx.core.providers.DefaultConnectionWrapper.disconnect(DefaultConnectionWrapper.java:90)
+	at org.jboss.ide.eclipse.as.jmx.integration.JBoss70ConnectionProvider$ExtendedDefaultConnectionWrapper.serverChanged(JBoss70ConnectionProvider.java:99)
+	at org.eclipse.wst.server.core.internal.ServerNotificationManager.broadcastChange(ServerNotificationManager.java:125)
+	at org.eclipse.wst.server.core.internal.Server.fireServerStateChangeEvent(Server.java:742)
+	at org.eclipse.wst.server.core.internal.Server.setServerState(Server.java:650)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.setServerState(ServerBehaviourDelegate.java:143)
+	at org.jboss.ide.eclipse.as.wtp.core.server.behavior.ControllableServerBehavior.setServerStopped(ControllableServerBehavior.java:213)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.ProcessTerminatedDebugListener.handleProcessTerminatedEvent(ProcessTerminatedDebugListener.java:74)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.ProcessTerminatedDebugListener.handleDebugEvents(ProcessTerminatedDebugListener.java:48)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(DebugPlugin.java:1151)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(DebugPlugin.java:1187)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:431)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at sun.rmi.transport.proxy.RMIDirectSocketFactory.createSocket(RMIDirectSocketFactory.java:40)
+	at sun.rmi.transport.proxy.RMIMasterSocketFactory.createSocket(RMIMasterSocketFactory.java:147)
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:613)
+	... 21 more
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2015-09-14 09:52:41.331
+!MESSAGE Error disconnecting from this server's JMX service: JBoss AS 7.0
+!STACK 0
+java.rmi.ConnectException: Connection refused to host: 127.0.0.1; nested exception is: 
+	java.net.ConnectException: Connection refused
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:619)
+	at sun.rmi.transport.tcp.TCPChannel.createConnection(TCPChannel.java:216)
+	at sun.rmi.transport.tcp.TCPChannel.newConnection(TCPChannel.java:202)
+	at sun.rmi.server.UnicastRef.invoke(UnicastRef.java:129)
+	at com.sun.jmx.remote.internal.PRef.invoke(Unknown Source)
+	at javax.management.remote.rmi.RMIConnectionImpl_Stub.close(Unknown Source)
+	at javax.management.remote.rmi.RMIConnector.close(RMIConnector.java:505)
+	at javax.management.remote.rmi.RMIConnector.close(RMIConnector.java:445)
+	at org.jboss.tools.jmx.core.providers.DefaultConnectionWrapper.disconnect(DefaultConnectionWrapper.java:90)
+	at org.jboss.ide.eclipse.as.jmx.integration.JBoss70ConnectionProvider$ExtendedDefaultConnectionWrapper.serverChanged(JBoss70ConnectionProvider.java:99)
+	at org.eclipse.wst.server.core.internal.ServerNotificationManager.broadcastChange(ServerNotificationManager.java:125)
+	at org.eclipse.wst.server.core.internal.Server.fireServerStateChangeEvent(Server.java:742)
+	at org.eclipse.wst.server.core.internal.Server.setMode(Server.java:838)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.setMode(ServerBehaviourDelegate.java:156)
+	at org.jboss.ide.eclipse.as.wtp.core.server.behavior.ControllableServerBehavior.setRunMode(ControllableServerBehavior.java:291)
+	at org.jboss.ide.eclipse.as.wtp.core.server.behavior.ControllableServerBehavior.setServerStopped(ControllableServerBehavior.java:215)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.ProcessTerminatedDebugListener.handleProcessTerminatedEvent(ProcessTerminatedDebugListener.java:74)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.ProcessTerminatedDebugListener.handleDebugEvents(ProcessTerminatedDebugListener.java:48)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(DebugPlugin.java:1151)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(DebugPlugin.java:1187)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:431)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at sun.rmi.transport.proxy.RMIDirectSocketFactory.createSocket(RMIDirectSocketFactory.java:40)
+	at sun.rmi.transport.proxy.RMIMasterSocketFactory.createSocket(RMIMasterSocketFactory.java:147)
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:613)
+	... 22 more
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2015-09-14 09:53:12.018
+!MESSAGE Error disconnecting from this server's JMX service: JBoss AS 7.0
+!STACK 0
+java.rmi.ConnectException: Connection refused to host: 127.0.0.1; nested exception is: 
+	java.net.ConnectException: Connection refused
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:619)
+	at sun.rmi.transport.tcp.TCPChannel.createConnection(TCPChannel.java:216)
+	at sun.rmi.transport.tcp.TCPChannel.newConnection(TCPChannel.java:202)
+	at sun.rmi.server.UnicastRef.invoke(UnicastRef.java:129)
+	at com.sun.jmx.remote.internal.PRef.invoke(Unknown Source)
+	at javax.management.remote.rmi.RMIConnectionImpl_Stub.close(Unknown Source)
+	at javax.management.remote.rmi.RMIConnector.close(RMIConnector.java:505)
+	at javax.management.remote.rmi.RMIConnector.close(RMIConnector.java:445)
+	at org.jboss.tools.jmx.core.providers.DefaultConnectionWrapper.disconnect(DefaultConnectionWrapper.java:90)
+	at org.jboss.ide.eclipse.as.jmx.integration.JBoss70ConnectionProvider$ExtendedDefaultConnectionWrapper.serverChanged(JBoss70ConnectionProvider.java:99)
+	at org.eclipse.wst.server.core.internal.ServerNotificationManager.broadcastChange(ServerNotificationManager.java:125)
+	at org.eclipse.wst.server.core.internal.Server.fireServerStateChangeEvent(Server.java:742)
+	at org.eclipse.wst.server.core.internal.Server.setMode(Server.java:838)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.setMode(ServerBehaviourDelegate.java:156)
+	at org.jboss.ide.eclipse.as.wtp.core.server.behavior.ControllableServerBehavior.setRunMode(ControllableServerBehavior.java:291)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.AbstractStartJavaServerLaunchDelegate.beforeVMRunner(AbstractStartJavaServerLaunchDelegate.java:156)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.AbstractStartJavaServerLaunchDelegate.launch(AbstractStartJavaServerLaunchDelegate.java:87)
+	at org.jboss.tools.as.core.server.controllable.subsystems.internal.LocalJBossLaunchController.launch(LocalJBossLaunchController.java:94)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.ControllableServerLaunchConfiguration.launch(ControllableServerLaunchConfiguration.java:52)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:731)
+	at org.eclipse.wst.server.core.internal.Server.startImpl2(Server.java:3541)
+	at org.eclipse.wst.server.core.internal.Server.startImpl(Server.java:3477)
+	at org.eclipse.wst.server.core.internal.Server$StartJob.run(Server.java:367)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at sun.rmi.transport.proxy.RMIDirectSocketFactory.createSocket(RMIDirectSocketFactory.java:40)
+	at sun.rmi.transport.proxy.RMIMasterSocketFactory.createSocket(RMIMasterSocketFactory.java:147)
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:613)
+	... 25 more
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2015-09-14 09:53:12.020
+!MESSAGE Error disconnecting from this server's JMX service: JBoss AS 7.0
+!STACK 0
+java.rmi.ConnectException: Connection refused to host: 127.0.0.1; nested exception is: 
+	java.net.ConnectException: Connection refused
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:619)
+	at sun.rmi.transport.tcp.TCPChannel.createConnection(TCPChannel.java:216)
+	at sun.rmi.transport.tcp.TCPChannel.newConnection(TCPChannel.java:202)
+	at sun.rmi.server.UnicastRef.invoke(UnicastRef.java:129)
+	at com.sun.jmx.remote.internal.PRef.invoke(Unknown Source)
+	at javax.management.remote.rmi.RMIConnectionImpl_Stub.close(Unknown Source)
+	at javax.management.remote.rmi.RMIConnector.close(RMIConnector.java:505)
+	at javax.management.remote.rmi.RMIConnector.close(RMIConnector.java:445)
+	at org.jboss.tools.jmx.core.providers.DefaultConnectionWrapper.disconnect(DefaultConnectionWrapper.java:90)
+	at org.jboss.ide.eclipse.as.jmx.integration.JBoss70ConnectionProvider$ExtendedDefaultConnectionWrapper.serverChanged(JBoss70ConnectionProvider.java:99)
+	at org.eclipse.wst.server.core.internal.ServerNotificationManager.broadcastChange(ServerNotificationManager.java:125)
+	at org.eclipse.wst.server.core.internal.Server.fireServerStateChangeEvent(Server.java:742)
+	at org.eclipse.wst.server.core.internal.Server.setServerState(Server.java:650)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.setServerState(ServerBehaviourDelegate.java:143)
+	at org.jboss.ide.eclipse.as.wtp.core.server.behavior.ControllableServerBehavior.setServerStarting(ControllableServerBehavior.java:195)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.AbstractStartJavaServerLaunchDelegate.beforeVMRunner(AbstractStartJavaServerLaunchDelegate.java:157)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.AbstractStartJavaServerLaunchDelegate.launch(AbstractStartJavaServerLaunchDelegate.java:87)
+	at org.jboss.tools.as.core.server.controllable.subsystems.internal.LocalJBossLaunchController.launch(LocalJBossLaunchController.java:94)
+	at org.jboss.ide.eclipse.as.wtp.core.server.launch.ControllableServerLaunchConfiguration.launch(ControllableServerLaunchConfiguration.java:52)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:731)
+	at org.eclipse.wst.server.core.internal.Server.startImpl2(Server.java:3541)
+	at org.eclipse.wst.server.core.internal.Server.startImpl(Server.java:3477)
+	at org.eclipse.wst.server.core.internal.Server$StartJob.run(Server.java:367)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at java.net.Socket.<init>(Socket.java:425)
+	at java.net.Socket.<init>(Socket.java:208)
+	at sun.rmi.transport.proxy.RMIDirectSocketFactory.createSocket(RMIDirectSocketFactory.java:40)
+	at sun.rmi.transport.proxy.RMIMasterSocketFactory.createSocket(RMIMasterSocketFactory.java:147)
+	at sun.rmi.transport.tcp.TCPEndpoint.newSocket(TCPEndpoint.java:613)
+	... 25 more
