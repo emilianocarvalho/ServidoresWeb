@@ -32,7 +32,7 @@ public class Dados extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 
-		out.println("Usando o verdo Get");
+		out.println("Usando o verbo Get");
 		
 		out.println("<form method='get' action='GetDados.do'>");
 		out.println("Nome <input type='text' name='nome'> <br/>");
@@ -41,7 +41,7 @@ public class Dados extends HttpServlet {
 		out.println("<input type='submit' value='Calcular'>");
 		out.println("</form>");
 
-		out.println("Usando o verdo Post");
+		out.println("Usando o verbo Post");
 		
 		out.println("<form method='post' action='GetDados.do'>");
 		out.println("Nome <input type='text' name='nome'> <br/>");
