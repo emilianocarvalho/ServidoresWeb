@@ -36,16 +36,10 @@ public class GetDados extends HttpServlet {
 
 		out.println("<head>");
 		out.println("<title>Calcular IMC</title>");
-		out.println("<style>");
-		out.println("table, th, td {border: 1px solid black; border-collapse: collapse;}");
-		out.println("th, td {padding: 5px;}");
-		out.println("th {text-align: left;}");
-		out.println("</style>");
-		
 		out.println("</head>");
 		out.println("<body>");
 
-		out.println("<h1>Calcular IMC</h1>");
+		out.println("<h1>Calcular IMC - Dados Recebidos</h1>");
 		out.println("<table>");
 		out.println("<tr>");
 
@@ -88,12 +82,7 @@ public class GetDados extends HttpServlet {
 			msgRet = "Abaixo do peso normal";
 
 		out.println("<tr>");
-		out.println("<td></td>");
-		out.println("</tr>");
-		out.println("<tr>");
-		out.println("<td>Resultado</td>");
-		out.println("</tr>");
-		out.println("<tr>");
+		out.println("<th>Resultado</td>");			
 		out.println("<th>Avaliação</td>");			
 		out.println("</tr>");
 		out.println("<tr>");
