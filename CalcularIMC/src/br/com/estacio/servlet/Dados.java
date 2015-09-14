@@ -32,13 +32,24 @@ public class Dados extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 
-		//Enumeration<String> header = request.getParameterNames();
+		out.println("Usando o verdo Get");
+		
 		out.println("<form method='get' action='GetDados.do'>");
 		out.println("Nome <input type='text' name='nome'> <br/>");
 		out.println("Peso <input type='text' name='peso'> <br/>");
 		out.println("Altura <input type='text' name='altura'> <br/>");
 		out.println("<input type='submit' value='Calcular'>");
 		out.println("</form>");
+
+		out.println("Usando o verdo Post");
+		
+		out.println("<form method='post' action='GetDados.do'>");
+		out.println("Nome <input type='text' name='nome'> <br/>");
+		out.println("Peso <input type='text' name='peso'> <br/>");
+		out.println("Altura <input type='text' name='altura'> <br/>");
+		out.println("<input type='submit' value='Calcular'>");
+		out.println("</form>");
+
 		out.close();
 
 
