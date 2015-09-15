@@ -349,3 +349,15 @@
 
 !ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2015-09-15 10:39:32.286
 !MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2015-09-15 11:29:03.705
+!MESSAGE Module ControllSession on JBoss AS 7.0 not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.wtp.core 1 16973825 2015-09-15 13:29:03.984
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2015-09-15 14:04:55.916
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2015-09-15 14:05:00.933
+!MESSAGE Server Startup Succeeded
