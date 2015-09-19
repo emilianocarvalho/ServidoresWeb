@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;attribute&apos; from expression &apos;(ArrayList&lt;String&gt;)sessao.getAttribute(&quot;textos&quot;)&apos;&#x0A;- Original project: &apos;ControllSession&apos;&#x0A;- Variable name: &apos;attribute&apos;&#x0A;- Destination method: &apos;br.com.estacio.servlet.MainServlet.doGet()&apos;&#x0A;- Variable expression: &apos;(ArrayList&lt;String&gt;)sessao.getAttribute(&quot;textos&quot;)&apos;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;attribute&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;br.com.estacio.servlet{MainServlet.java" name="attribute" replace="true" selection="1153 49" stamp="1442674601330" version="1.0"/>
+</session>
