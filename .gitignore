@@ -1,3 +1,28 @@
+# Created by https://www.gitignore.io/api/jboss,java,eclipse
+
+### Jboss ###
+jboss/server/all/deploy/project.ext
+jboss/server/default/deploy/project.ext
+jboss/server/minimal/deploy/project.ext
+jboss/server/all/log/*.log
+jboss/server/all/tmp/**/*
+jboss/server/all/data/**/*
+jboss/server/all/work/**/*
+jboss/server/default/log/*.log
+jboss/server/default/tmp/**/*
+jboss/server/default/data/**/*
+jboss/server/default/work/**/*
+jboss/server/minimal/log/*.log
+jboss/server/minimal/tmp/**/*
+jboss/server/minimal/data/**/*
+jboss/server/minimal/work/**/*
+
+# deployed package files #
+
+*.DEPLOYED
+
+
+### Java ###
 *.class
 
 # Mobile Tools for Java (J2ME)
@@ -10,41 +35,46 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-<<<<<<< HEAD
 
-# netbeans
-nbproject/private/
-build/
-nbbuild/
 
-# the dist file could make some problems
-# dist/
-nbdist/
-nbactions.xml
-nb-configuration.xml
-.nb-gradle/
-
-# Eclipse
-.classpath
-.project
+### Eclipse ###
+*.pydevproject
+.metadata
+.gradle
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
 .settings/
+.loadpath
 
-# Intellij
-.idea/
-*.iml
-*.iws
+# Eclipse Core
+.project
 
-# Mac
-.DS_Store
+# External tool builders
+.externalToolBuilders/
 
-# Maven
-log/
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-=======
->>>>>>> 369a945b54d685d72ffaad50afbd3a89a07d77fa
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# JDT-specific (Eclipse Java Development Tools)
+.classpath
+
+# Java annotation processor (APT)
+.factorypath
+
+# PDT-specific
+.buildpath
+
+# sbteclipse plugin
+.target
+
+# TeXlipse plugin
+.texlipse
+
