@@ -17,14 +17,6 @@ import javax.servlet.http.HttpSession;
 @WebServlet(description = "Receber um número informado e retornar a tabuada deste número", urlPatterns = { "/RetTabuada.do" })
 public class RetTabuada extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public RetTabuada() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
