@@ -3,6 +3,7 @@ package br.com.estacio.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +18,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet(description = "Controll Session", urlPatterns = { "/MainServlet.do" })
 public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	public ArrayList<String> txtDig = new ArrayList<String>();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -29,31 +30,38 @@ public class MainServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-		PrintWriter out = response.getWriter();
-		
 		HttpSession sessao = request.getSession();
-		ArrayList<String> textos = (ArrayList<String>) sessao.getAttribute("textos");
 		
-		if(textos == null){
-			textos = new ArrayList<String>();
-			sessao.setAttribute("textos", textos);
-			
+		
+		//ArrayList<String> textos = (ArrayList<String>) sessao.getAttribute("textos");
+		String textos = (String)sessao.getAttribute("textos"); //get the list from session
+		
+		if(textos == null) {
+			System.out.println("getAttribute textos foi null");
+			sessao.setAttribute("textos",textos); //finally store the processed list
 		} else {
-			String texto = request.getParameter("texto"); // recebe texto do form e adiciona a sessão
+			//sessao = request.getSession(true);
+			
+			//here do some processing with orders
+			String texto = request.getParameter("textos"); // recebe texto do form e adiciona a sessão
 			
 			if (!texto.isEmpty()) {
-				textos.add(texto);
+				
 				sessao.setAttribute("textos", texto);
 			}
 			
-			for (int i = 0; i < textos.size(); i++) {
-				System.out.println(textos.get(i));
-			}
+			//for (int i = 0; i < sessao.getValueNames().length; i++) {
+			//	System.out.println(sessao.getAttributeNames().toString());
+			//}
 			
-			System.out.println("------------------------------->>");
+			
+			System.out.println(textos + "------------------------------->>");
 		}
+				
+		PrintWriter out = response.getWriter();
 		
 		out.println("<html><head><title>Page 02</title></head>");
 		out.println("<body>");
