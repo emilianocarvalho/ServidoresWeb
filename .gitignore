@@ -20,7 +20,7 @@ jboss/server/minimal/work/**/*
 # deployed package files #
 
 *.DEPLOYED
-
+.gitignore~
 
 ### Java ###
 *.class
