@@ -22,7 +22,7 @@ public class MainServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		if (request.getParameter("nome") == null) {
-			request.setAttribute("message", "" );
+			request.setAttribute("message", "<h1></h1>" );
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 		} else {
 			String msg = "<h1>Dados recebidos: " + request.getParameter("nome") + "<h1>";
