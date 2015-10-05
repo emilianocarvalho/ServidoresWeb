@@ -32,7 +32,9 @@ public class Main {
 		
 		System.out.println("Elemento raiz: " + raiz.getNodeName());		
 		
-		// CRUD - CREATE
+		/*
+		 *  CRUD - CREATE
+		 */
 		Element novaPessoa = doc.createElement("pessoa");
 		novaPessoa.setAttribute("id", "3");
 		Element novoNome = doc.createElement("nome");
@@ -51,7 +53,10 @@ public class Main {
 		NodeList listaPessoas = raiz.getElementsByTagName("pessoa");
 		
 		System.out.println("Quantidade de Pessoas: " + listaPessoas.getLength());
-		// CRUD - READ
+		
+		/*
+		 * CRUD - READ
+		 */
 		for (int i = 0; i < listaPessoas.getLength(); i++) {
 			Element tagPessoa = (Element) listaPessoas.item(i);
 			
@@ -69,7 +74,9 @@ public class Main {
 		}
 		Scanner s = new Scanner(System.in);
 
-		// CRUD - UPDATE
+		/*
+		 *  CRUD - UPDATE
+		 */
 		System.out.println("Deseja salvar?");
 	    String salvar = s.next();
 	    if (salvar.equalsIgnoreCase("s")){
