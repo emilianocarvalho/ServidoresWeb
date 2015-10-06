@@ -130,7 +130,7 @@ public class Main {
 		 */
 		try {			
 			raiz.removeChild(novaPessoa);
-			System.out.println("CRUD - CREATE Arquivo salvo com sucesso");				
+			System.out.println("CRUD - DELETE Elemento removido com sucesso");				
 		} catch (DOMException e) {
 			e.printStackTrace();
 		}
