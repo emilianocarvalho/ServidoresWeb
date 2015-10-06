@@ -14,4 +14,4 @@
 		<peso>190</peso>
 		<altura>1.95</altura>
 	</pessoa>
-</pessoas>
+<pessoa id="3"><nome>Pedro</nome><peso>190</peso><altura>1.95</altura></pessoa></pessoas>

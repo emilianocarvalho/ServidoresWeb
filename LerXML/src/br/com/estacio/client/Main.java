@@ -70,6 +70,13 @@ public class Main {
 		Element raiz = doc.getDocumentElement();
 
 		System.out.println("Elemento raiz: " + raiz.getNodeName());		
+		
+		NodeList listaPessoas = raiz.getElementsByTagName("pessoa");
+
+		/* 
+		 * CRUD - READ
+		 */
+		readPessoas(listaPessoas);
 
 		/*
 		 *  CRUD - CREATE
@@ -94,7 +101,6 @@ public class Main {
 			e.printStackTrace();
 		}
 
-		NodeList listaPessoas = raiz.getElementsByTagName("pessoa");
 
 		/* 
 		 * CRUD - READ
@@ -104,7 +110,7 @@ public class Main {
 		Scanner s = new Scanner(System.in);
 
 		/*
-		 *  CRUD - UPDATE
+		 *  CRUD - CREATE
 		 */
 		System.out.println("Deseja salvar?");
 		String salvar = s.next();
@@ -117,7 +123,7 @@ public class Main {
 				transformer.transform(source, result);
 				System.out.println("CRUD - CREATE Arquivo salvo com sucesso");				
 			} catch (IOException e) {
-				System.out.println("O arquivo não pode ser lido.");
+				System.out.println("CRUD - CREATE O arquivo não pode ser lido.");
 				e.printStackTrace();
 			}
 
@@ -135,6 +141,9 @@ public class Main {
 			e.printStackTrace();
 		}
 
+		/*
+		 * CRUD - UPDATE
+		 */
 		System.out.println("Deseja salvar?");
 		salvar = s.next();
 		if (salvar.equalsIgnoreCase("s")){
@@ -144,9 +153,9 @@ public class Main {
 				TransformerFactory transFactory = TransformerFactory.newInstance();
 				Transformer transformer = transFactory.newTransformer();
 				transformer.transform(source, result);
-				System.out.println("CRUD - CREATE Arquivo salvo com sucesso");				
+				System.out.println("CRUD - UPDATE Arquivo salvo com sucesso");				
 			} catch (IOException e) {
-				System.out.println("O arquivo não pode ser lido.");
+				System.out.println("CRUD - UPDATE O arquivo não pode ser lido.");
 				e.printStackTrace();
 			}
 		} else {
