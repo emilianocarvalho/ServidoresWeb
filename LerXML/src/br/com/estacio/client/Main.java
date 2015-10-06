@@ -22,15 +22,13 @@ import org.xml.sax.SAXException;
 public class Main {
 
 	/*
-	 * listar pessoas cadastradas
+	 * CRUD - READ
+	 * param: Nodelist listagem 
 	 */
-	public static void listarPessoas(NodeList listagem) {
+	public static void readPessoas(NodeList listagem) {
 
 		System.out.println("Quantidade de Pessoas: " + listagem.getLength());
 
-		/*
-		 * CRUD - READ
-		 */
 
 		for (int i = 0; i < listagem.getLength(); i++) {
 			Element tagPessoa = (Element) listagem.item(i);
@@ -47,6 +45,13 @@ public class Main {
 			NodeList tagAltura = tagPessoa.getElementsByTagName("altura");
 			System.out.println("O altura da Pessoa é: " + tagAltura.item(0).getTextContent());
 		}
+		
+	}
+	
+	/*
+	 * CRUD - CREATE
+	 */
+	public static void createPessoa(Document doc, Element raiz) {
 		
 	}
 	
@@ -83,7 +88,7 @@ public class Main {
 		/* 
 		 * CRUD - READ
 		 */
-		listarPessoas(listaPessoas);
+		readPessoas(listaPessoas);
 
 		Scanner s = new Scanner(System.in);
 
@@ -134,7 +139,7 @@ public class Main {
 		/* 
 		 * CRUD - READ
 		 */
-		listarPessoas(listaPessoas);
+		readPessoas(listaPessoas);
 
 	}
 
