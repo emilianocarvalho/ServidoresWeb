@@ -14,6 +14,7 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Attr;
+import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -29,32 +30,37 @@ public class Main {
 
 		System.out.println("Quantidade de Pessoas: " + listagem.getLength());
 
+		try {
 
-		for (int i = 0; i < listagem.getLength(); i++) {
-			Element tagPessoa = (Element) listagem.item(i);
+			for (int i = 0; i < listagem.getLength(); i++) {
+				Element tagPessoa = (Element) listagem.item(i);
 
-			Attr id = tagPessoa.getAttributeNode("id");
-			System.out.println("O Id é: " + id.getNodeValue());
+				Attr id = tagPessoa.getAttributeNode("id");
+				System.out.println("O Id é: " + id.getNodeValue());
 
-			NodeList tagNome = tagPessoa.getElementsByTagName("nome");
-			System.out.println("O nome da Pessoa é: " + tagNome.item(0).getTextContent());
+				NodeList tagNome = tagPessoa.getElementsByTagName("nome");
+				System.out.println("O nome da Pessoa é: " + tagNome.item(0).getTextContent());
 
-			NodeList tagPeso = tagPessoa.getElementsByTagName("peso");
-			System.out.println("O peso da Pessoa é: " + tagPeso.item(0).getTextContent());
+				NodeList tagPeso = tagPessoa.getElementsByTagName("peso");
+				System.out.println("O peso da Pessoa é: " + tagPeso.item(0).getTextContent());
 
-			NodeList tagAltura = tagPessoa.getElementsByTagName("altura");
-			System.out.println("O altura da Pessoa é: " + tagAltura.item(0).getTextContent());
+				NodeList tagAltura = tagPessoa.getElementsByTagName("altura");
+				System.out.println("O altura da Pessoa é: " + tagAltura.item(0).getTextContent());
+			}
+			System.out.println("CRUD - READ Arquivo lido com sucesso");				
+		} catch (DOMException e) {
+			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	/*
 	 * CRUD - CREATE
 	 */
 	public static void createPessoa(Document doc, Element raiz) {
-		
+
 	}
-	
+
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, TransformerException {
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		DocumentBuilder db = dbf.newDocumentBuilder();
@@ -62,7 +68,7 @@ public class Main {
 		Document doc = db.parse("pessoas.xml");
 
 		Element raiz = doc.getDocumentElement();
-		
+
 		System.out.println("Elemento raiz: " + raiz.getNodeName());		
 
 		/*
@@ -70,18 +76,23 @@ public class Main {
 		 */
 		Element novaPessoa = doc.createElement("pessoa");
 		novaPessoa.setAttribute("id", "3");
-		Element novoNome = doc.createElement("nome");
-		novoNome.setTextContent("Pedro");
-		Element novoPeso = doc.createElement("peso");
-		novoPeso.setTextContent("190");
-		Element novaAltura = doc.createElement("altura");
-		novaAltura.setTextContent("1.95");
-		// adicionando as tags criadas
-		novaPessoa.appendChild(novoNome);
-		novaPessoa.appendChild(novoPeso);
-		novaPessoa.appendChild(novaAltura);
-		// Adicionando o novo elemento ao XML
-		raiz.appendChild(novaPessoa);
+		try {
+
+			Element novoNome = doc.createElement("nome");
+			novoNome.setTextContent("Pedro");
+			Element novoPeso = doc.createElement("peso");
+			novoPeso.setTextContent("190");
+			Element novaAltura = doc.createElement("altura");
+			novaAltura.setTextContent("1.95");
+			/*  adicionando as tags criadas */
+			novaPessoa.appendChild(novoNome);
+			novaPessoa.appendChild(novoPeso);
+			novaPessoa.appendChild(novaAltura);
+			/* Adicionando o novo elemento ao XML */
+			raiz.appendChild(novaPessoa);
+		} catch (DOMException e) {
+			e.printStackTrace();
+		}
 
 		NodeList listaPessoas = raiz.getElementsByTagName("pessoa");
 
@@ -117,7 +128,13 @@ public class Main {
 		/* 
 		 * CRUD - DELETE
 		 */
-		raiz.removeChild(novaPessoa);
+		try {			
+			raiz.removeChild(novaPessoa);
+			System.out.println("CRUD - CREATE Arquivo salvo com sucesso");				
+		} catch (DOMException e) {
+			e.printStackTrace();
+		}
+
 		System.out.println("Deseja salvar?");
 		salvar = s.next();
 		if (salvar.equalsIgnoreCase("s")){
