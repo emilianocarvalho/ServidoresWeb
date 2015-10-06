@@ -28,7 +28,6 @@ public class Main {
 	 */
 	public static void readPessoas(NodeList listagem) {
 
-		System.out.println("Quantidade de Pessoas: " + listagem.getLength());
 
 		try {
 
@@ -47,7 +46,10 @@ public class Main {
 				NodeList tagAltura = tagPessoa.getElementsByTagName("altura");
 				System.out.println("O altura da Pessoa é: " + tagAltura.item(0).getTextContent());
 			}
+			System.out.println("Quantidade de Pessoas: " + listagem.getLength());
+			System.out.println();
 			System.out.println("CRUD - READ Arquivo lido com sucesso");				
+
 		} catch (DOMException e) {
 			e.printStackTrace();
 		}
@@ -97,6 +99,8 @@ public class Main {
 			novaPessoa.appendChild(novaAltura);
 			/* Adicionando o novo elemento ao XML */
 			raiz.appendChild(novaPessoa);
+			System.out.println("CRUD - CREATE elemento adicionado salvo com sucesso");				
+			System.out.println();
 		} catch (DOMException e) {
 			e.printStackTrace();
 		}
@@ -122,6 +126,7 @@ public class Main {
 				Transformer transformer = transFactory.newTransformer();
 				transformer.transform(source, result);
 				System.out.println("CRUD - CREATE Arquivo salvo com sucesso");				
+				System.out.println();
 			} catch (IOException e) {
 				System.out.println("CRUD - CREATE O arquivo não pode ser lido.");
 				e.printStackTrace();
@@ -137,9 +142,14 @@ public class Main {
 		try {			
 			raiz.removeChild(novaPessoa);
 			System.out.println("CRUD - DELETE Elemento removido com sucesso");				
+			System.out.println();
 		} catch (DOMException e) {
 			e.printStackTrace();
 		}
+		/* 
+		 * CRUD - READ
+		 */
+		readPessoas(listaPessoas);
 
 		/*
 		 * CRUD - UPDATE
@@ -154,6 +164,7 @@ public class Main {
 				Transformer transformer = transFactory.newTransformer();
 				transformer.transform(source, result);
 				System.out.println("CRUD - UPDATE Arquivo salvo com sucesso");				
+				System.out.println();
 			} catch (IOException e) {
 				System.out.println("CRUD - UPDATE O arquivo não pode ser lido.");
 				e.printStackTrace();
