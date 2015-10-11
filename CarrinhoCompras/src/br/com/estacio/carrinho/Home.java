@@ -2,6 +2,7 @@ package br.com.estacio.carrinho;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Vector;
 
 import javax.servlet.ServletException;
@@ -22,22 +23,23 @@ public class Home extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession sessao = request.getSession();
-		Vector<String> carrinho = (Vector<String>) sessao.getAttribute("carrinho");
-		if (carrinho == null) {
-			carrinho = new Vector<String>();
-			sessao.setAttribute("carrinho", carrinho);
-		}
 
-		response.setContentType("text/html;charset=utf-8");
-		
-		PrintWriter out = response.getWriter();
-		out.println("Usando o verbo Get");
-		carrinho.add("Produto 1");
-		out.append("<h1>Carrinho de Compras</h1>");
-		out.append("Carrinho: " + carrinho.lastElement());
-		out.append("Sessão: " + sessao.getId());
-		out.close();
+		String nomeLivro = request.getParameter("livro");  
+
+		Produto produto = new Produto();  
+		produto.setLivro(nomeLivro);  
+
+		ArrayList retornoLista = new ArrayList();  
+
+		retornoLista = new AdicionaItensCarrinho().AdicionaItensCarrinho(produto, retornoLista);  
+
+
+		HttpSession session = request.getSession(true);  
+
+		session.setAttribute("lista", retornoLista);  
+
+
+		response.sendRedirect("LerCarrinho.jsp");		
 	}
 
 }
