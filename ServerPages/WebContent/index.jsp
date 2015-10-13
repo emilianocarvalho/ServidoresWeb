@@ -7,7 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%!int acessos = 0;%>
 	<%
+		java.util.Date d = new java.util.Date();
+		String hoje = java.text.DateFormat.getDateInstance().format(d);
+
 		if (Math.random() >= 0.5) {
 			out.println("Bom dia!<br/>");
 		} else {
@@ -17,7 +21,27 @@
 		for (int i = 0; i < 5; i++) {
 			out.println("Seja bem vindo!<br/>");
 		}
-	%>
+		acessos++;
 
+		String nome = request.getParameter("nome");
+		if (nome != null) {
+			%>
+			<h2>Seu nome é <%=nome %></h2>
+			<%
+		} else {
+			%> 
+			<form action="index.jsp" method="post">
+			<input type="text" name="nome" /><br/>
+			<input type="submit" value="Enviar"/>
+			</form>
+			<%
+		}
+	%>
+	<h1>
+		Hoje é
+		<%=hoje%></h1>
+	<p>
+		Acessos
+		<%=acessos%>
 </body>
 </html>
