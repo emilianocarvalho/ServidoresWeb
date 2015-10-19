@@ -43,10 +43,11 @@ public class TestLista {
 		consumidor.setCn_lastlogin(Calendar.getInstance());
 
 		ConsumidorDAO dao = new ConsumidorDAO();
-		dao.adiciona(consumidor);
+		//dao.adiciona(consumidor);
 		
 		printList();
 		
+		consumidor.setCn_id(35);
 		consumidor.setCn_nome("Robert Carl");
 		dao.altera(consumidor);
 		

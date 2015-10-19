@@ -102,16 +102,21 @@ public class ConsumidorDAO {
 	 */
 	public void altera(Consumidor consumidor) throws UnknownHostException {
 		String sql = "update consumidor set cn_nome=?, cn_email=?, "+
-				"cn_telb1=?, cn_telb2=?, cn_bltmk=?, cn_lastlogin=? where id=?";
+				"cn_telb1=?, cn_telb2=?, cn_bltmk=?, cn_lastip=?, cn_lastlogin=? where cn_id=?";
 		try {
 			PreparedStatement stmt = (PreparedStatement) connection.prepareStatement(sql);
 			stmt.setString(1, consumidor.getCn_nome());
 			stmt.setString(2, consumidor.getCn_email());
 			stmt.setString(3, consumidor.getCn_telb1());
 			stmt.setString(4, consumidor.getCn_telb2());
-			stmt.setInt(7, consumidor.getCn_bltmk());
-			stmt.setString(8, InetAddress.getLocalHost().getHostAddress());		
-			stmt.setDate(9, new Date(consumidor.getCn_lastlogin().getTimeInMillis()));
+			stmt.setInt(5, consumidor.getCn_bltmk());
+			stmt.setString(6, InetAddress.getLocalHost().getHostAddress());		
+			stmt.setDate(7, new Date(consumidor.getCn_lastlogin().getTimeInMillis()));
+			
+			stmt.setLong(8, consumidor.getCn_id());	
+			
+			stmt.execute();
+			stmt.close();
 			
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
