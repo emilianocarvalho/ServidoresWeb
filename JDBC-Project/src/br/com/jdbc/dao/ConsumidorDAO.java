@@ -1,5 +1,7 @@
 package br.com.jdbc.dao;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.ResultSet;
@@ -16,11 +18,20 @@ import com.mysql.jdbc.PreparedStatement;
 public class ConsumidorDAO {
 	private Connection connection;
 
+	/**
+	 * factory DAO
+	 */
 	public ConsumidorDAO() {
 		this.connection = new ConnectionFactory().getConnection();
 	}
 
-	public void adiciona(Consumidor consumidor) throws SQLException {
+	/**
+	 * adiciona consumidor
+	 * @param consumidor
+	 * @throws SQLException
+	 * @throws UnknownHostException
+	 */
+	public void adiciona(Consumidor consumidor) throws SQLException, UnknownHostException {
 		try {
 			String sql = "INSERT INTO consumidor" +
 					"(cn_nome, cn_email, cn_telb1, cn_telb2, cn_telb3, cn_telb4, cn_bltmk, cn_lastip, cn_lastlogin)" +
@@ -35,7 +46,7 @@ public class ConsumidorDAO {
 			stmt.setString(5, consumidor.getCn_telb3());
 			stmt.setString(6, consumidor.getCn_telb4());
 			stmt.setInt(7, consumidor.getCn_bltmk());
-			stmt.setString(8, consumidor.getCn_lastip());		
+			stmt.setString(8, InetAddress.getLocalHost().getHostAddress());		
 			stmt.setDate(9, new Date(consumidor.getCn_lastlogin().getTimeInMillis()));
 
 			// executa
@@ -48,7 +59,7 @@ public class ConsumidorDAO {
 	}
 
 	/**
-	 * getLista - lista de consumidores
+	 * getLista consumidores
 	 * @return
 	 */
 	public List<Consumidor> getLista() {
@@ -82,5 +93,44 @@ public class ConsumidorDAO {
 			throw new RuntimeException(e);
 		}
 
+	}
+
+	/**
+	 * 
+	 * @param consumidor
+	 * @throws UnknownHostException
+	 */
+	public void altera(Consumidor consumidor) throws UnknownHostException {
+		String sql = "update consumidor set cn_nome=?, cn_email=?, "+
+				"cn_telb1=?, cn_telb2=?, cn_bltmk=?, cn_lastlogin=? where id=?";
+		try {
+			PreparedStatement stmt = (PreparedStatement) connection.prepareStatement(sql);
+			stmt.setString(1, consumidor.getCn_nome());
+			stmt.setString(2, consumidor.getCn_email());
+			stmt.setString(3, consumidor.getCn_telb1());
+			stmt.setString(4, consumidor.getCn_telb2());
+			stmt.setInt(7, consumidor.getCn_bltmk());
+			stmt.setString(8, InetAddress.getLocalHost().getHostAddress());		
+			stmt.setDate(9, new Date(consumidor.getCn_lastlogin().getTimeInMillis()));
+			
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	/**
+	 * remove consumidor
+	 * @param consumidor
+	 */
+	public void remove(Consumidor consumidor) {
+		String sql = "delete from consumidor where id=?";
+		try {
+			PreparedStatement stmt = (PreparedStatement) connection.prepareStatement(sql);
+			stmt.setLong(1, consumidor.getCn_id());
+			stmt.execute();
+			stmt.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
 }
