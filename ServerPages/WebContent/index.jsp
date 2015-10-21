@@ -56,6 +56,6 @@
 		Acessos
 		<%=acessos%>
 
-		<%@ include file="rodape.jsp"%>
+		<jsp:include page="rodape.jsp">
 </body>
 </html>
