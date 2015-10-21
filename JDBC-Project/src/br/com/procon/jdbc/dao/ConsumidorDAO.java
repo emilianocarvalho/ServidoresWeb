@@ -1,4 +1,4 @@
-package br.com.jdbc.dao;
+package br.com.procon.jdbc.dao;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import br.com.estudos.ConnectionFactory;
-import br.com.modelo.Consumidor;
+import br.com.procon.jdbc.ConnectionFactory;
+import br.com.procon.model.Consumidor;
 
 import com.mysql.jdbc.PreparedStatement;
 

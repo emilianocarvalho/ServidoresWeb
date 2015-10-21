@@ -1,13 +1,12 @@
-package br.com.estudos;
+package br.com.procon.jdbc;
 
-import java.io.PrintWriter;
 import java.net.UnknownHostException;
 import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.List;
 
-import br.com.jdbc.dao.ConsumidorDAO;
-import br.com.modelo.Consumidor;
+import br.com.procon.jdbc.dao.ConsumidorDAO;
+import br.com.procon.model.Consumidor;
 
 public class TestLista {
 

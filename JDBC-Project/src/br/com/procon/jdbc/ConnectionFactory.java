@@ -1,4 +1,4 @@
-package br.com.estudos;
+package br.com.procon.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,4 +1,4 @@
-package br.com.modelo;
+package br.com.procon.model;
 
 import java.util.Calendar;
 
