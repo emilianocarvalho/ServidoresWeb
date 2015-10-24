@@ -44,7 +44,7 @@ img {
 			<th>Ultimo Login</th>
 		</tr>
 		<c:forEach var="consumidor" items="${dao.lista}" varStatus="id">
-			<tr bgcolor="#${id.count % 2 == 0 ? 'aaee88' : 'ffffff' }">
+			<tr bgcolor="#${id.count % 2 == 0 ? 'ccff88' : 'ffffff' }">
 				<td>${consumidor.cn_nome}</td>
 				<td><c:choose>
 						<c:when test="${not empty consumidor.cn_email}">
