@@ -15,12 +15,11 @@ img {
 </style>
 </head>
 <body>
-	<div class="content">
 
-		<c:import url="cabecalho.jsp" />
-		<jsp:useBean id="dao" class="br.gov.pb.procon.dao.ConsumidorDAO" />
-		<table class="table table-striped table-hover">
-			<thead>
+	<c:import url="cabecalho.jsp" />
+	<jsp:useBean id="dao" class="br.gov.pb.procon.dao.ConsumidorDAO" />
+	<table class="table table-striped table-hover">
+		<thead>
 			<tr>
 				<th>Nome</th>
 				<th>Email</th>
@@ -31,8 +30,8 @@ img {
 				<th>Último IP</th>
 				<th>Ultimo Login</th>
 			</tr>
-			</thead>
-			<tbody>
+		</thead>
+		<tbody>
 			<c:forEach var="consumidor" items="${dao.lista}" varStatus="id">
 				<tr>
 					<td>${consumidor.cn_nome}</td>
@@ -54,9 +53,8 @@ img {
 				</tr>
 
 			</c:forEach>
-			</tbody>
-		</table>
-		<c:import url="rodape.jsp" />
-	</div>
+		</tbody>
+	</table>
+	<c:import url="rodape.jsp" />
 </body>
 </html>
