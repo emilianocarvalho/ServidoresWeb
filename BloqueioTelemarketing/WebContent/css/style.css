@@ -1,0 +1,8 @@
+/* .table > tbody > tr > td,  */
+/* .table > tbody > tr > th { */
+/*     border-top-color: green; */
+/* } */
+
+.table-hover > tbody > tr:hover {
+  background-color: #afecaf;
+}
