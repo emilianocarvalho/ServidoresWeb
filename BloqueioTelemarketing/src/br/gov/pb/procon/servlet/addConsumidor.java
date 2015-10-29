@@ -48,7 +48,7 @@ public class addConsumidor extends HttpServlet {
 		Integer bltmk = Integer.parseInt(retBlq);
 
 		/**
-		 * consumidor enos rafael - 3218-4901 / 99926-0652
+		 * consumidor 
 		 */
 		Consumidor consumidor = new Consumidor();
 		consumidor.setCn_nome(nome);
