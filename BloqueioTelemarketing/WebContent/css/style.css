@@ -1,3 +1,18 @@
+body {
+	font-size: 12px;
+	padding-top: 5px;
+    padding-bottom: 60px;
+}
 .table-hover > tbody > tr:hover {
   background-color: #afecaf;
+}
+
+div > img {
+	width: 201px;
+	height: 160px;
+}
+
+.page-header {
+    padding-bottom: 9px;
+    margin: 10px 0 15px;
 }

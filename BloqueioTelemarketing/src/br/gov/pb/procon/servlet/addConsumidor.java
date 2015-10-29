@@ -6,6 +6,7 @@ import java.net.InetAddress;
 import java.sql.SQLException;
 import java.util.Calendar;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,9 +29,11 @@ public class addConsumidor extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
+		//PrintWriter out = response.getWriter();
 
-		// pegando os parâmetros do request
+		/**
+		 *  pegando os parâmetros do request
+		 */
 		String nome = request.getParameter("cn_nome");
 		String email = request.getParameter("cn_email");
 		String telb1 = request.getParameter("cn_telb1");
@@ -45,7 +48,7 @@ public class addConsumidor extends HttpServlet {
 		Integer bltmk = Integer.parseInt(retBlq);
 
 		/**
-		 * consumidor
+		 * consumidor enos rafael - 3218-4901 / 99926-0652
 		 */
 		Consumidor consumidor = new Consumidor();
 		consumidor.setCn_nome(nome);
@@ -69,13 +72,11 @@ public class addConsumidor extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		// imprime o nome do contato que foi adicionado
-		out.println("<html>");
-		out.println("<body>");
-		out.println("Consumidor " + consumidor.getCn_nome()
-				+ " adicionado com sucesso");
-		out.println("</body>");
-		out.println("</html>");
+		/**
+		 *  imprime o nome do contato que foi adicionado
+		 */
+		RequestDispatcher rd = request.getRequestDispatcher("consumidor-adicionado.jsp?nome="+nome);
+		rd.forward(request,response);		
 	}
 
 }

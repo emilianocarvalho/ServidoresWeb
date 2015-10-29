@@ -19,7 +19,7 @@
 
 </head>
 <body>
-	<div class="container-fluid">
+	<div class="container">
 		<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c"%>
 		<img alt="Procon PB" src="<c:url value="/images/logo-procon.png"/>" />
 		<h2>Bloqueio Telemarketing - Não Pertube</h2>

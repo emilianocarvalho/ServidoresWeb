@@ -36,7 +36,7 @@ public class FornecedorDAO {
 	 */
 	public void adiciona(Fornecedor fornecedor) throws SQLException, UnknownHostException {
 		try {
-			String sql = "INSERT INTO fornecedor" +
+			String sql = "INSERT INTO fornecedor " +
 					"(fn_razao_social, fn_cnpj, fn_email, fn_telb4, fn_ativo, fn_lastip, fn_lastlogin)" +
 					" VALUES (?, ?, ?, ?, ?, ?, ?)";
 
