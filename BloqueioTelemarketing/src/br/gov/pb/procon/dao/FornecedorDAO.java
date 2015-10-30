@@ -39,7 +39,7 @@ public class FornecedorDAO {
 			String sql = "INSERT INTO fornecedor " +
 					"(fn_razao_social, fn_cnpj, fn_email, fn_telb4, fn_ativo, fn_lastip, fn_lastlogin)" +
 					" VALUES (?, ?, ?, ?, ?, ?, ?)";
-
+																	
 			PreparedStatement stmt = (PreparedStatement) connection.prepareStatement(sql);
 
 			stmt.setString(1, fornecedor.getFn_razao_social());
