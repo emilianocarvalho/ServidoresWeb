@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- License Agreement at http://iconmonstr.com/license/ -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   x="0px"
+   y="0px"
+   width="512px"
+   height="512px"
+   viewBox="0 0 512 512"
+   style="enable-background:new 0 0 512 512;"
+   xml:space="preserve"
+   id="svg2"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="iconmonstr-id-card-8-icon.svg"><metadata
+     id="metadata9"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+     id="defs7" /><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1338"
+     inkscape:window-height="750"
+     id="namedview5"
+     showgrid="false"
+     inkscape:zoom="1.1343384"
+     inkscape:cx="131.25768"
+     inkscape:cy="256"
+     inkscape:window-x="28"
+     inkscape:window-y="18"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" /><path
+     id="id-card-8-icon"
+     d="M216.5,50v139h79V50H216.5z M256,134.833c-8.468,0-15.332-6.865-15.332-15.333  s6.864-15.333,15.332-15.333c8.469,0,15.334,6.865,15.334,15.333S264.469,134.833,256,134.833z M462,149v313H50V149h136.5v40H90v233  h332V189h-96.5v-40H462z M383,328.166h-98.666v-30H383V328.166z M318.334,384.831v-30H383v30H318.334z M180.922,322.116  c-28.799-53.038-8.211-83.108,22.717-83.108c30.328,0,51.438,28.959,22.715,83.108c-9.435,17.788,10.049,22.015,30.979,26.845  c20.921,4.824,19.312,15.854,19.312,35.87H130.631c0-20.016-1.609-31.046,19.312-35.87  C170.426,344.235,190.641,340.013,180.922,322.116z M383,271.5h-98.666v-30H383V271.5z"
+     style="fill:#2d3543;fill-opacity:1" /></svg>

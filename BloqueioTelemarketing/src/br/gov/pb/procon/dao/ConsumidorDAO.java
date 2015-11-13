@@ -54,16 +54,19 @@ public class ConsumidorDAO {
 			stmt.execute();
 			stmt.close();
 
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
+		} catch (SQLException se) {
+			String sqlState = se.getSQLState();
+			String message = se.getMessage();
+			throw new SQLException(sqlState, message, se.getErrorCode(), se);
 		}
 	}
 
 	/**
 	 * getLista consumidores
 	 * @return
+	 * @throws SQLException 
 	 */
-	public List<Consumidor> getLista() {
+	public List<Consumidor> getLista() throws SQLException {
 		try {
 			List<Consumidor> consumidores = new ArrayList<Consumidor>();
 			PreparedStatement stmt = (PreparedStatement) this.connection.prepareStatement("select * from consumidor");
@@ -90,8 +93,10 @@ public class ConsumidorDAO {
 			rs.close();
 			stmt.close();
 			return consumidores;
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
+		} catch (SQLException se) {
+			String sqlState = se.getSQLState();
+			String message = se.getMessage();
+			throw new SQLException(sqlState, message, se.getErrorCode(), se);
 		}
 
 	}
@@ -100,8 +105,9 @@ public class ConsumidorDAO {
 	 * 
 	 * @param consumidor
 	 * @throws UnknownHostException
+	 * @throws SQLException 
 	 */
-	public void altera(Consumidor consumidor) throws UnknownHostException {
+	public void altera(Consumidor consumidor) throws UnknownHostException, SQLException {
 		String sql = "update consumidor set cn_nome=?, cn_email=?, "+
 				"cn_telb1=?, cn_telb2=?, cn_bltmk=?, cn_lastip=?, cn_lastlogin=? where cn_id=?";
 		try {
@@ -119,24 +125,33 @@ public class ConsumidorDAO {
 			stmt.execute();
 			stmt.close();
 			
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
+		} catch (SQLException se) {
+			String sqlState = se.getSQLState();
+			String message = se.getMessage();
+			throw new SQLException(sqlState, message, se.getErrorCode(), se);
+
+			//			throw new RuntimeException(e);
 		}
 	}
 	
 	/**
 	 * remove consumidor
 	 * @param consumidor
+	 * @throws SQLException 
 	 */
-	public void remove(Consumidor consumidor) {
+	public void remove(Consumidor consumidor) throws SQLException {
 		String sql = "delete from consumidor where id=?";
 		try {
 			PreparedStatement stmt = (PreparedStatement) connection.prepareStatement(sql);
 			stmt.setLong(1, consumidor.getCn_id());
 			stmt.execute();
 			stmt.close();
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
+		} catch (SQLException se) {
+			String sqlState = se.getSQLState();
+			String message = se.getMessage();
+			throw new SQLException(sqlState, message, se.getErrorCode(), se);
+
+			//			throw new RuntimeException(e);
 		}
 	}
 }

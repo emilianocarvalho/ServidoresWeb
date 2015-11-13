@@ -29,10 +29,10 @@ public class addConsumidor extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		//PrintWriter out = response.getWriter();
+		// PrintWriter out = response.getWriter();
 
 		/**
-		 *  pegando os parâmetros do request
+		 * pegando os parâmetros do request
 		 */
 		String nome = request.getParameter("cn_nome");
 		String email = request.getParameter("cn_email");
@@ -44,11 +44,11 @@ public class addConsumidor extends HttpServlet {
 
 		if (retBlq == null)
 			retBlq = "0";
-		
+
 		Integer bltmk = Integer.parseInt(retBlq);
 
 		/**
-		 * consumidor 
+		 * consumidor
 		 */
 		Consumidor consumidor = new Consumidor();
 		consumidor.setCn_nome(nome);
@@ -58,25 +58,39 @@ public class addConsumidor extends HttpServlet {
 		consumidor.setCn_telb3(telb3);
 		consumidor.setCn_telb4(telb4);
 		consumidor.setCn_bltmk(bltmk);
-		consumidor.setCn_lastip(InetAddress.getLocalHost().getHostAddress());		
+		consumidor.setCn_lastip(InetAddress.getLocalHost().getHostAddress());
 		consumidor.setCn_lastlogin(Calendar.getInstance());
 
 		ConsumidorDAO dao;
 		try {
 			dao = new ConsumidorDAO();
 			dao.adiciona(consumidor);
+			/**
+			 * imprime o nome do contato que foi adicionado
+			 */
+			RequestDispatcher rd = request
+					.getRequestDispatcher("addConsumidor.jsp?msg=" + "Cadastro realizado com sucesso");
+			rd.forward(request, response);
 		} catch (ClassNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		} catch (SQLException se) {
+			if (se.getErrorCode() == 1062) {
+				RequestDispatcher rd = request
+						.getRequestDispatcher("addConsumidor.jsp?msg=" + "Consumidor já cadastrado");
+				rd.forward(request, response);				
+			}
+			int count = 1;
+			while (se != null) {
+				System.out.println("SQLException " + count);
+				System.out.println("Code: " + se.getErrorCode());
+				System.out.println("SqlState: " + se.getSQLState());
+				System.out.println("Error Message: " + se.getMessage());
+				se = se.getNextException();
+				count++;
+			}
+		} 
 
-		/**
-		 *  imprime o nome do contato que foi adicionado
-		 */
-		RequestDispatcher rd = request.getRequestDispatcher("consumidor-adicionado.jsp?nome="+nome);
-		rd.forward(request,response);		
 	}
 
 }

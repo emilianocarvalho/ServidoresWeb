@@ -54,16 +54,19 @@ public class FornecedorDAO {
 			stmt.execute();
 			stmt.close();
 
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
+		} catch (SQLException se) {
+			String sqlState = se.getSQLState();
+			String message = se.getMessage();
+			throw new SQLException(sqlState, message, se.getErrorCode(), se);
 		}
 	}
 
 	/**
 	 * lista
 	 * @return
+	 * @throws SQLException 
 	 */
-	public List<Fornecedor> getLista() {
+	public List<Fornecedor> getLista() throws SQLException {
 		try {
 			List<Fornecedor> fornecedores = new ArrayList<Fornecedor>();
 			PreparedStatement stmt = (PreparedStatement) this.connection.prepareStatement("select * from fornecedor");
@@ -88,8 +91,10 @@ public class FornecedorDAO {
 			rs.close();
 			stmt.close();
 			return fornecedores;
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
+		} catch (SQLException se) {
+			String sqlState = se.getSQLState();
+			String message = se.getMessage();
+			throw new SQLException(sqlState, message, se.getErrorCode(), se);
 		}
 
 	}
