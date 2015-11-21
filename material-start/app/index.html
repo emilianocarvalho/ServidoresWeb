@@ -33,7 +33,7 @@
     </div>
   </md-toolbar>
   <br>
-  <md-content ng-view="" md-scroll-y="" class="layout-padding ng-scope flex">
+  <md-content class="layout-padding ng-scope flex">
     <md-whiteframe class="md-whiteframe-1dp" flex="grow" layout layout-align="center center" ng-cloak>
       <md-list class="well">
         <md-subheader class="md-no-sticky"><h3>{{app}}</h3></md-subheader>
@@ -52,8 +52,25 @@
               </tr>
             </tbody>
           </table>
+          <hr/>
         </md-list-item>
-      </md-list>
+        <md-subheader class="md-no-sticky"><h4>Cadastrar</h4></md-subheader>
+      <md-list-item>
+      <md-content layout-padding >
+          <md-input-container>
+            <label>Nome</label>
+            <input ng-model="nome" type="text" placeholder="digite seu nome">
+          </md-input-container>
+          <md-input-container>
+            <label>Telefone</label>
+            <input ng-model="telefone" type="text" placeholder="digite seu telefone">
+          </md-input-container>
+          <md-input-container>
+          <md-button class="md-raised" ng-click="adicionarContato()">Adicionar</md-button>
+        </md-input-container>
+        </md-content>
+    </md-list-item>
+  </md-list>
     </md-whiteframe>
     <br />
     <script src="./bower_components/angular/angular.js"></script>
@@ -70,8 +87,10 @@
         {nome: "Paula", telefone: "95588-8877"},
         {nome: "Roberto", telefone: "98877-8845"}
       ];
+      $scope.adicionarContato = function() {
+        $scope.contatos.push({nome: $scope.nome, telefone: $scope.telefone});
+      };
     });
     </script>
-
   </body>
   </html>

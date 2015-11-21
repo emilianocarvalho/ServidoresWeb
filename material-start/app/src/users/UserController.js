@@ -4,10 +4,9 @@
        .module('users')
        .config(function($mdThemingProvider){
          // Update the theme colors to use themes on font-icons
-         $mdThemingProvider.theme('default')
-               .primaryPalette("red")
-               .accentPalette('green')
-               .warnPalette('blue');
+           $mdThemingProvider.theme('docs-dark', 'default')
+               .primaryPalette('yellow')
+               .dark();
        })
        .controller('UserController', [
           'userService', '$mdSidenav', '$mdBottomSheet', '$log', '$q',

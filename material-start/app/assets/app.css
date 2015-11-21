@@ -90,9 +90,17 @@ md-button.menuBtn > md-icon {
 }
 
 /* Utils */
-
+demo-inclue {
+  display: block;
+}
 .content-wrapper {
   position: relative;
+}
+md-list-item.md-no-proxy, md-list-item .md-no-style {
+    padding: 0px 2px;
+}
+.md-button {
+    text-align: center;
 }
 
 md-list {
@@ -100,7 +108,9 @@ md-list {
     min-width: 350px;
     margin-right: auto;
 }
-
+table {
+  padding-top: 8px;
+}
 .layout-padding {
     padding: 8px;
 }
