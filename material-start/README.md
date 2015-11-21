@@ -1,5 +1,7 @@
 # Angular Material-Start
 
+This project is based in [material-start](https://github.com/angular/material-start)
+
 This Material **start*** project is a *seed* for AngularJS Material applications. The project contains a sample AngularJS application and is pre-configured to install the Angular framework and a bunch of development and testing tools for instant web development gratification.
 
 This sample application is intended to be useful as both a learning tool and a skeleton application
@@ -45,7 +47,7 @@ for  ES5 Tutorial steps & development process.
 * Branch [**Starter - ES6**](https://github.com/angular/material-start/tree/es6): same application as created in the **[master](https://github.com/angular/material-start)** branch, but implemented with ES6 and JSPM.
 
 > The **README** for the ES6 branch will provide some details showing how easy, <u>more simplifed</u>,
-and <u>more manageable</u> it is to develop ES6 applications with Angular Material 1.x. As time permits, we will expand on that information.<br/><br/> 
+and <u>more manageable</u> it is to develop ES6 applications with Angular Material 1.x. As time permits, we will expand on that information.<br/><br/>
 
 ## Getting Started
 
@@ -127,7 +129,7 @@ cd ./app; live-server;
 `baseUrl: 'http://localhost:8080'`
 
  2. In another tab, start a Webdriver instance:
- 
+
 ```console
 webdriver-manager start
 ```
@@ -138,7 +140,7 @@ status of the server at `http://localhost:4444/wd/hub`. If you see errors, verif
 `e2e-tests/protractor.conf.js` for `chromeDriver` and `seleniumServerJar` to your local file system.
 
  3. Run your e2e tests using the `test` script defined in `package.json`:
- 
+
 ```console
 npm test
 ```
