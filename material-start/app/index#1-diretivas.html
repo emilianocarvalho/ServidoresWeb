@@ -12,27 +12,6 @@
   <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
   <link rel="stylesheet" href="assets/app.css"/>
   <link rel="stylesheet" href="assets/bootstrap.min.css">
-  <script>
-  angular.module('listaTelefonica', ['ngMaterial']);
-  angular.module('listaTelefonica').controller('listaTelefonicaCtrl', function($scope){
-    $scope.app = "Lista Telefônica";
-    $scope.contatos = [
-      {nome: "Pedro", telefone: "99999-8888"},
-      {nome: "Ana", telefone: "77558-5222"},
-      {nome: "Paula", telefone: "95588-8877"},
-      {nome: "Roberto", telefone: "98877-8845"}
-    ];
-    $scope.operadoras = [
-      {nome: "OI", codigo: 31},
-      {nome: "VIVO", codigo: 14},
-      {nome: "TIM", codigo: 41}
-    ];
-    $scope.adicionarContato = function(contato) {
-      $scope.contatos.push(angular.copy(contato));
-      delete $scope.contato;
-    };
-  });
-  </script>
 </head>
 
 <body ng-controller="listaTelefonicaCtrl">
@@ -87,7 +66,7 @@
             <input ng-model="contato.telefone" type="text" placeholder="digite seu telefone">
           </md-input-container>
           <md-input-container>
-          <md-button class="md-raised" ng-disabled="!contato.nome || !contato.telefone" ng-click="adicionarContato(contato)">Adicionar</md-button>
+          <md-button class="md-raised" ng-click="adicionarContato(contato)">Adicionar</md-button>
         </md-input-container>
         </md-content>
     </md-list-item>
@@ -98,5 +77,21 @@
     <script src="./bower_components/angular-animate/angular-animate.js"></script>
     <script src="./bower_components/angular-aria/angular-aria.js"></script>
     <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+    <script>
+    angular.module('listaTelefonica', ['ngMaterial']);
+    angular.module('listaTelefonica').controller('listaTelefonicaCtrl', function($scope){
+      $scope.app = "Lista Telefônica";
+      $scope.contatos = [
+        {nome: "Pedro", telefone: "99999-8888"},
+        {nome: "Ana", telefone: "77558-5222"},
+        {nome: "Paula", telefone: "95588-8877"},
+        {nome: "Roberto", telefone: "98877-8845"}
+      ];
+      $scope.adicionarContato = function(contato) {
+        $scope.contatos.push(angular.copy(contato));
+        delete $scope.contato;
+      };
+    });
+    </script>
   </body>
   </html>
