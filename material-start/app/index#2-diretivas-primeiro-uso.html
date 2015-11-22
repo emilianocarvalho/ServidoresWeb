@@ -74,7 +74,7 @@
               <tr ng-repeat="contato in contatos">
                 <td>{{contato.nome}}</td>
                 <td>{{contato.telefone}}</td>
-                <td>{{contato.operadora}}</td>
+                <td>{{contato.operadora.nome}}</td>
               </tr>
             </tbody>
           </table>
@@ -98,7 +98,7 @@
         </md-list-item>
           <md-input-container class="md-block">
             <label>Operadora</label>
-            <select class="form-control" ng-model="contato.operadora" ng-options="operadora.codigo as operadora.nome for operadora in operadoras">
+            <select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome for operadora in operadoras">
                 <option value="">Selecione uma operadora</option>
             </select>
             <!-- Segundo a documentação do angular o ng-options é mais eficiente do que o np-repeat
