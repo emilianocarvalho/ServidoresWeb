@@ -25,9 +25,11 @@
       {nome: "Roberto", telefone: "98877-8845"}
     ];
     $scope.operadoras = [
-      {nome: "OI", codigo: 31},
-      {nome: "VIVO", codigo: 14},
-      {nome: "TIM", codigo: 41}
+      {nome: "OI", codigo: 31, categoria: "Celular"},
+      {nome: "VIVO", codigo: 14, categoria: "Celular"},
+      {nome: "TIM", codigo: 41, categoria: "Celular"},
+      {nome: "GVT", codigo: 25, categoria: "Fixo"},
+      {nome: "EMBRATEL", codigo: 21, categoria: "Fixo"}
     ];
     $scope.adicionarContato = function(contato) {
       $scope.contatos.push(angular.copy(contato));
@@ -90,7 +92,7 @@
               <input ng-model="contato.telefone">
             </md-input-container>
             <md-input-container>
-              <md-button class="md-raised" ng-disabled="!contato.nome || !contato.telefone || !contato.operadora" ng-click="adicionarContato(contato)">Adicionar</md-button>
+              <md-button class="md-raised" ng-disabled="!contato.nome || !contato.telefone" ng-click="adicionarContato(contato)">Adicionar</md-button>
             </md-input-container>
           </md-content>
         </md-list-item>

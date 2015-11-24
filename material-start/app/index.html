@@ -3,11 +3,9 @@
 <head>
   <title>Lista Telefonica</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-
   <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
   <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
   <link rel="stylesheet" href="assets/app.css"/>
@@ -27,9 +25,11 @@
       {nome: "Roberto", telefone: "98877-8845"}
     ];
     $scope.operadoras = [
-      {nome: "OI", codigo: 31},
-      {nome: "VIVO", codigo: 14},
-      {nome: "TIM", codigo: 41}
+      {nome: "OI", codigo: 31, categoria: "Celular"},
+      {nome: "VIVO", codigo: 14, categoria: "Celular"},
+      {nome: "TIM", codigo: 41, categoria: "Celular"},
+      {nome: "GVT", codigo: 25, categoria: "Fixo"},
+      {nome: "EMBRATEL", codigo: 21, categoria: "Fixo"}
     ];
     $scope.adicionarContato = function(contato) {
       $scope.contatos.push(angular.copy(contato));
@@ -74,7 +74,7 @@
               <tr ng-repeat="contato in contatos">
                 <td>{{contato.nome}}</td>
                 <td>{{contato.telefone}}</td>
-                <td>{{contato.operadora}}</td>
+                <td>{{contato.operadora.nome}}</td>
               </tr>
             </tbody>
           </table>
@@ -92,13 +92,13 @@
               <input ng-model="contato.telefone">
             </md-input-container>
             <md-input-container>
-              <md-button class="md-raised" ng-disabled="!contato.nome || !contato.telefone || !contato.operadora" ng-click="adicionarContato(contato)">Adicionar</md-button>
+              <md-button class="md-raised" ng-disabled="!contato.nome || !contato.telefone" ng-click="adicionarContato(contato)">Adicionar</md-button>
             </md-input-container>
           </md-content>
         </md-list-item>
           <md-input-container class="md-block">
             <label>Operadora</label>
-            <select class="form-control" ng-model="contato.operadora" ng-options="operadora.codigo as operadora.nome for operadora in operadoras">
+            <select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome group by operadora.categoria for operadora in operadoras">
                 <option value="">Selecione uma operadora</option>
             </select>
             <!-- Segundo a documentação do angular o ng-options é mais eficiente do que o np-repeat
