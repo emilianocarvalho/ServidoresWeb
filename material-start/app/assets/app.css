@@ -135,6 +135,12 @@ md-input-container.md-block select {
     margin-right: auto;
 }
 
+.selecionado {
+  background-color: yellow;
+}
+.negrito {
+  font-weight: bold;
+}
 md-select-value {
   width: 200px;
 }
