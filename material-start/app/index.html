@@ -35,6 +35,16 @@
       $scope.contatos.push(angular.copy(contato));
       delete $scope.contato;
     };
+    $scope.removerContato = function(contatos) {
+      $scope.contatos = contatos.filter(function (contato){
+        if (!contato.selecionado) return contato;
+      });
+    };
+    $scope.isContatoSelecionado = function(contatos) {
+      return contatos.some(function(contato){
+        return contato.selecionado;
+      });
+    };
   });
   </script>
 </head>
@@ -92,10 +102,13 @@
             <md-input-container>
               <label>Telefone</label>
               <input ng-model="contato.telefone">
-            </md-input-container>
+            </md-input-container><br/>
             <md-input-container>
               <md-button class="md-raised" ng-disabled="!contato.nome || !contato.telefone || !contato.operadora" ng-click="adicionarContato(contato)">Adicionar</md-button>
-            </md-input-container>
+            </md-input-container><br/>
+            <md-input-container>
+              <md-button class="md-raised md-warn" ng-click="removerContato(contatos)" ng-disabled="!isContatoSelecionado(contatos)">Remover</md-button>
+            </md-input-container><br/>
           </md-content>
         </md-list-item>
           <md-input-container class="md-block">
