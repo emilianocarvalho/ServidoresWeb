@@ -72,7 +72,7 @@
               <th>Operadora</th>
             </thead>
             <tbody>
-              <tr ng-class="{selecionado: contato.selecionado, negrito: contato.selecionado}" ng-repeat="contato in contatos">
+              <tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in contatos">
                 <td><input type="checkbox" ng-model="contato.selecionado"></td>
                 <td>{{contato.nome}}</td>
                 <td>{{contato.telefone}}</td>
@@ -94,7 +94,7 @@
               <input ng-model="contato.telefone">
             </md-input-container>
             <md-input-container>
-              <md-button class="md-raised" ng-disabled="!contato.nome || !contato.telefone" ng-click="adicionarContato(contato)">Adicionar</md-button>
+              <md-button class="md-raised" ng-disabled="!contato.nome || !contato.telefone || !contato.operadora" ng-click="adicionarContato(contato)">Adicionar</md-button>
             </md-input-container>
           </md-content>
         </md-list-item>
