@@ -10,10 +10,10 @@ import br.gov.pb.procon.model.Formulario;
 @XmlRootElement
 public class Formularios {
 	
-	private List<Formulario> formularios = new ArrayList<Formulario>();
+	private List<Formulario> formularios = new ArrayList<>();
 	
-	@XmlElement
-	public List<Formulario> getFormulario() {
+	@XmlElement(name="formulario")
+	public List<Formulario> getFormularios() {
 		return formularios;
 	}
 	

@@ -10,6 +10,7 @@ public class Formulario {
 	private UF estado;
 	private String telefone;
 
+	
 	public Formulario(String denominacao, String rua, String numero,
 			String bairro, String cep, String municipio, UF estado,
 			String telefone) {
