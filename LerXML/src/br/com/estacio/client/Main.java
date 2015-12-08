@@ -72,7 +72,7 @@ public class Main {
 		Element raiz = doc.getDocumentElement();
 
 		System.out.println("Elemento raiz: " + raiz.getNodeName());		
-		
+
 		NodeList listaPessoas = raiz.getElementsByTagName("pessoa");
 
 		/* 
@@ -172,11 +172,6 @@ public class Main {
 		} else {
 			System.out.println("CRUD - CREATE Não foi possível salvar");
 		}
-
-		/* 
-		 * CRUD - READ
-		 */
-		readPessoas(listaPessoas);
 
 	}
 

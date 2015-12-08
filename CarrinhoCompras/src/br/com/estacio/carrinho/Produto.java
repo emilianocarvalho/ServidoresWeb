@@ -1,21 +1,22 @@
 package br.com.estacio.carrinho;
 
 public class Produto {
-	private String nome;
-	private double preco;
 
-	public String getNome() {
-		return nome;
+	public Produto() {
+		// TODO Auto-generated constructor stub
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+
+
+	private String livro;
+
+
+	public String getLivro() {
+		return livro;
 	}
-	public double getPreco() {
-		return preco;
+
+
+	public void setLivro(String livro) {
+		this.livro = livro;
 	}
-	public void setPreco(double preco) {
-		this.preco = preco;
-	}
-	
-	
+
 }
